@@ -7,6 +7,7 @@ void TinyRPCProvider::NotifyService(google::protobuf::Service *service)
 {
     const google::protobuf::ServiceDescriptor *desp = service->GetDescriptor();
     std::string serviceName = desp->name();
+    std::cout << "service name:" << serviceName << std::endl;
     //存储服务信息
     ServiceInfo serviceInfo;
     for (int i = 0; i < desp->method_count(); i++)
@@ -15,6 +16,7 @@ void TinyRPCProvider::NotifyService(google::protobuf::Service *service)
         std::string methodName = methodDes->name();
         //存储方法信息
         serviceInfo.m_methodMap.insert({methodName, methodDes});
+        std::cout << "\tmethod name:" << methodName << std::endl;
     }
     serviceInfo.m_service = service;
     m_serviceMap.insert({serviceName, serviceInfo});
@@ -35,6 +37,7 @@ void TinyRPCProvider::Run()
     //启动网络服务
     server.start();
     m_eventLoop.loop();
+    std::cout << "muduo server run on ip:" << rpcIP << ",port : " << rpcPort << std::endl;
 }
 //自定义socket连接回调
 void TinyRPCProvider::OnConnection(const muduo::net::TcpConnectionPtr &conn)
