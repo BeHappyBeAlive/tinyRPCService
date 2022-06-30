@@ -1,7 +1,7 @@
 #pragma once
 
 #include <google/protobuf/service.h>
-
+#include <string>
 /*
     rpc服务框架中的控制类  对rpc中出现的流程的状态 如失败、退出等记录在此类中，进行展示控制
 */
@@ -12,15 +12,15 @@ public:
     
     void Reset();
 
-    bool Failed();
+    bool Failed() const;
 
-    std::string ErrorText();
+    std::string ErrorText() const;
 
     void StartCancel();
 
     void SetFailed(const std::string &reason);
 
-    bool IsCanceled();
+    bool IsCanceled() const;
 
     void NotifyOnCancel(google::protobuf::Closure *callback);
 

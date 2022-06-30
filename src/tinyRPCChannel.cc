@@ -1,12 +1,14 @@
 #include "tinyRPCChannel.h"
 #include "tinyRPCHeader.pb.h"
 #include "tinyRPCApplication.h"
+#include "tinyRPCController.h"
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <errno.h>
+#include <sstream>
 
 void TinyRPCChannel::CallMethod(const google::protobuf::MethodDescriptor *method,
                                 google::protobuf::RpcController *controller, const google::protobuf::Message *request,
@@ -30,7 +32,8 @@ void TinyRPCChannel::CallMethod(const google::protobuf::MethodDescriptor *method
     }
     else
     {
-        std::cout << "serialize request message error!" << std::endl;
+        // std::cout << "serialize request message error!" << std::endl;
+        controller->SetFailed("serialize request message error!");
         return;
     }
 
@@ -51,7 +54,8 @@ void TinyRPCChannel::CallMethod(const google::protobuf::MethodDescriptor *method
     }
     else
     {
-        std::cout << "serialize rpcHeader message error!" << std::endl;
+        // std::cout << "serialize rpcHeader message error!" << std::endl;
+        controller->SetFailed("serialize rpcHeader message error!");
         return;
     }
     //开始进行组织字符串
@@ -74,9 +78,10 @@ void TinyRPCChannel::CallMethod(const google::protobuf::MethodDescriptor *method
     int clientFd = socket(AF_INET, SOCK_STREAM, 0);
     if (-1 == clientFd)
     {
-        // errno 为socket的错误码 为全局宏
-        std::cout << "create socket error! errno is:" << errno << std::endl;
-        exit(EXIT_FAILURE);
+        std::stringstream strStream;
+        strStream << "create socket error! errno is:" << errno;
+        controller->SetFailed(strStream.str());
+        return;
     }
     // ip地址
     std::string rpcIP = TinyRPCApplication::getInstance().getTinyRPCConfig().LoadByKey("tinyRPCServer_ip");
@@ -92,15 +97,19 @@ void TinyRPCChannel::CallMethod(const google::protobuf::MethodDescriptor *method
     if (-1 == connect(clientFd, (struct sockaddr *)&server_addr, sizeof(server_addr)))
     {
         close(clientFd);
-        std::cout << "connect to rpc Node failed! errno: " << errno << std::endl;
-        exit(EXIT_FAILURE);
+        std::stringstream strStream;
+        strStream << "connect to rpc Node failed! errno: " << errno;
+        controller->SetFailed(strStream.str());
+        return;
     }
     //连接成功之后，发送数据
     if (-1 == send(clientFd, sendRPCRequestStr.c_str(), sendRPCRequestStr.size(), 0))
     {
         close(clientFd);
-        std::cout << "send rpcRequestStr" << sendRPCRequestStr << " to rpc Node failed! errno: " << errno << std::endl;
-        exit(EXIT_FAILURE);
+        std::stringstream strStream;
+        strStream << "send rpcRequestStr" << sendRPCRequestStr << " to rpc Node failed! errno: " << errno;
+        controller->SetFailed(strStream.str());
+        return;
     }
 
     //阻塞接受rpc的响应数据
@@ -109,7 +118,9 @@ void TinyRPCChannel::CallMethod(const google::protobuf::MethodDescriptor *method
     if (-1 == (resvSize = recv(clientFd, resvBuffer, 1024, 0)))
     {
         close(clientFd);
-        std::cout << "resv rpcResponseStr from rpc Node failed! errno: " << errno << std::endl;
+        std::stringstream strStream;
+        strStream << "resv rpcResponseStr from rpc Node failed! errno: " << errno;
+        controller->SetFailed(strStream.str());
         return;
     }
     //解析响应的字符串到Message
@@ -122,7 +133,9 @@ void TinyRPCChannel::CallMethod(const google::protobuf::MethodDescriptor *method
     if (!response->ParseFromArray(resvBuffer, resvSize))
     {
         close(clientFd);
-        std::cout << "parse rpcResponseStr :" << rpcResponseStr << " from src responseStr failed! errno: " << errno << std::endl;
+        std::stringstream strStream;
+        strStream << "parse rpcResponseStr :" << rpcResponseStr << " from src responseStr failed! errno: " << errno;
+        controller->SetFailed(strStream.str());
         return;
     }
 

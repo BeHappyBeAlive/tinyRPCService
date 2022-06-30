@@ -12,12 +12,12 @@ void TinyRPCController::Reset()
     m_rpcErrText = "";
 }
 
-bool TinyRPCController::Failed()
+bool TinyRPCController::Failed() const
 {
     return m_rpcFailed;
 }
 
-std::string TinyRPCController::ErrorText()
+std::string TinyRPCController::ErrorText() const
 {
     return m_rpcErrText;
 }
@@ -32,7 +32,7 @@ void TinyRPCController::SetFailed(const std::string &reason)
     m_rpcErrText = reason;
 }
 
-bool TinyRPCController::IsCanceled()
+bool TinyRPCController::IsCanceled() const
 {
     return false;
 }

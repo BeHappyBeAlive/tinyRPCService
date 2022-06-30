@@ -27,6 +27,7 @@ void TinyRPCProvider::Run()
     std::string rpcIP = TinyRPCApplication::getInstance().getTinyRPCConfig().LoadByKey("tinyRPCServer_ip");
     uint16_t rpcPort = std::atoi(TinyRPCApplication::getInstance().getTinyRPCConfig().LoadByKey("tinyRPCServer_port").c_str());
     muduo::net::InetAddress address(rpcIP, rpcPort);
+    std::cout << "muduo server run on ip:" << rpcIP << ",port : " << rpcPort << std::endl;
     //创建TcpServer对象
     muduo::net::TcpServer server(&m_eventLoop, address, "tinyRPCProvider");
     //绑定连接回调和消息读写回调方法，分离了网络代码和业务代码  回调需要绑定参数
@@ -37,7 +38,6 @@ void TinyRPCProvider::Run()
     //启动网络服务
     server.start();
     m_eventLoop.loop();
-    std::cout << "muduo server run on ip:" << rpcIP << ",port : " << rpcPort << std::endl;
 }
 //自定义socket连接回调
 void TinyRPCProvider::OnConnection(const muduo::net::TcpConnectionPtr &conn)
