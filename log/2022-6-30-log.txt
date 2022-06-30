@@ -1,0 +1,1 @@
+17:58:30 => [LOG_INFO]first log message test!
