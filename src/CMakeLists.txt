@@ -4,6 +4,7 @@ set(SRC_LIST
     tinyRPCConfig.cc
     tinyRPCHeader.pb.cc
     tinyRPCChannel.cc
+    tinyRPCController.cc
 )
 #aux_source_directory(. SRC_LIST)
 # SHARED 动态库 add_library(tinyRPC SHARED ${SRC_LIST})
