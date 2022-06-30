@@ -30,7 +30,7 @@ TinyRPCLogger::TinyRPCLogger()
             time_t now = time(nullptr);
             tm *nowtm = localtime(&now);
             char fileNameBuf[128];
-            sprintf(fileNameBuf, "%d-%d-%d-log.txt", nowtm->tm_year + 1900, nowtm->tm_mon + 1, nowtm->tm_mday);
+            sprintf(fileNameBuf, "../log/%d-%d-%d-log.txt", nowtm->tm_year + 1900, nowtm->tm_mon + 1, nowtm->tm_mday);
             FILE *pf = fopen(fileNameBuf, "a+");
             if (pf == nullptr)
             {
