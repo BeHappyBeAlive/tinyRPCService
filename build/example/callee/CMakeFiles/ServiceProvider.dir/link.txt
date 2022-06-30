@@ -1,0 +1,1 @@
+/usr/bin/g++ -rdynamic CMakeFiles/ServiceProvider.dir/userservice.cc.o CMakeFiles/ServiceProvider.dir/__/user.pb.cc.o -o ../../../bin/ServiceProvider   -L/home/codeTest/lib  -Wl,-rpath,/home/codeTest/lib ../../../lib/libtinyRPC.a -lprotobuf -lmuduo_net -lmuduo_base -lpthread 

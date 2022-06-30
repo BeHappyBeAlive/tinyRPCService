@@ -1,0 +1,47 @@
+[
+{
+  "directory": "/home/codeTest/build/src",
+  "command": "/usr/bin/g++  -I/home/codeTest/src/include -I/home/codeTest/example  -o CMakeFiles/tinyRPC.dir/tinyRPCApplication.cc.o -c /home/codeTest/src/tinyRPCApplication.cc",
+  "file": "/home/codeTest/src/tinyRPCApplication.cc"
+},
+{
+  "directory": "/home/codeTest/build/src",
+  "command": "/usr/bin/g++  -I/home/codeTest/src/include -I/home/codeTest/example  -o CMakeFiles/tinyRPC.dir/tinyRPCProvider.cc.o -c /home/codeTest/src/tinyRPCProvider.cc",
+  "file": "/home/codeTest/src/tinyRPCProvider.cc"
+},
+{
+  "directory": "/home/codeTest/build/src",
+  "command": "/usr/bin/g++  -I/home/codeTest/src/include -I/home/codeTest/example  -o CMakeFiles/tinyRPC.dir/tinyRPCConfig.cc.o -c /home/codeTest/src/tinyRPCConfig.cc",
+  "file": "/home/codeTest/src/tinyRPCConfig.cc"
+},
+{
+  "directory": "/home/codeTest/build/src",
+  "command": "/usr/bin/g++  -I/home/codeTest/src/include -I/home/codeTest/example  -o CMakeFiles/tinyRPC.dir/tinyRPCHeader.pb.cc.o -c /home/codeTest/src/tinyRPCHeader.pb.cc",
+  "file": "/home/codeTest/src/tinyRPCHeader.pb.cc"
+},
+{
+  "directory": "/home/codeTest/build/src",
+  "command": "/usr/bin/g++  -I/home/codeTest/src/include -I/home/codeTest/example  -o CMakeFiles/tinyRPC.dir/tinyRPCChannel.cc.o -c /home/codeTest/src/tinyRPCChannel.cc",
+  "file": "/home/codeTest/src/tinyRPCChannel.cc"
+},
+{
+  "directory": "/home/codeTest/build/example/callee",
+  "command": "/usr/bin/g++  -I/home/codeTest/src/include -I/home/codeTest/example  -o CMakeFiles/ServiceProvider.dir/userservice.cc.o -c /home/codeTest/example/callee/userservice.cc",
+  "file": "/home/codeTest/example/callee/userservice.cc"
+},
+{
+  "directory": "/home/codeTest/build/example/callee",
+  "command": "/usr/bin/g++  -I/home/codeTest/src/include -I/home/codeTest/example  -o CMakeFiles/ServiceProvider.dir/__/user.pb.cc.o -c /home/codeTest/example/user.pb.cc",
+  "file": "/home/codeTest/example/user.pb.cc"
+},
+{
+  "directory": "/home/codeTest/build/example/caller",
+  "command": "/usr/bin/g++  -I/home/codeTest/src/include -I/home/codeTest/example  -o CMakeFiles/ServiceConsumer.dir/calluserservice.cc.o -c /home/codeTest/example/caller/calluserservice.cc",
+  "file": "/home/codeTest/example/caller/calluserservice.cc"
+},
+{
+  "directory": "/home/codeTest/build/example/caller",
+  "command": "/usr/bin/g++  -I/home/codeTest/src/include -I/home/codeTest/example  -o CMakeFiles/ServiceConsumer.dir/__/user.pb.cc.o -c /home/codeTest/example/user.pb.cc",
+  "file": "/home/codeTest/example/user.pb.cc"
+}
+]

@@ -1,0 +1,1 @@
+/usr/bin/g++ -rdynamic CMakeFiles/ServiceConsumer.dir/calluserservice.cc.o CMakeFiles/ServiceConsumer.dir/__/user.pb.cc.o -o ../../../bin/ServiceConsumer   -L/home/codeTest/lib  -Wl,-rpath,/home/codeTest/lib ../../../lib/libtinyRPC.a -lprotobuf -lmuduo_net -lmuduo_base -lpthread 

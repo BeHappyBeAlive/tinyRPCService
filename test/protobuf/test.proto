@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package zhurui;
+
+//开启生成服务类和rpc方法描述
+option cc_generic_services=true;
+//请求
+message LoginRequest
+{
+    string name=1;
+    string pwd=2;
+}
+
+//响应1
+message LoginReponse
+{
+    ResponseCode result_code=1;
+    bool success=2;
+}
+
+message ResponseCode
+{
+    int32 errcode=1;
+    bytes errms=2;
+}
+message GetFriendListsRequest
+{
+    uint32 userid=1;
+}
+message user
+{
+    bytes name=1;
+    uint32 age=2;
+    enum Sex
+    {
+        M = 0;
+        W = 1;
+    }
+    Sex sex=3;
+}
+//protoc test.proto --cpp_out=./
+
+message GetFriendListsResponse
+{
+    ResponseCode result_code=1;
+    //列表
+    repeated user frinedList=2;
+}
+
+//service中如何表示rpc
+service UserServiceRpc
+{
+    rpc Login(LoginRequest) returns(LoginReponse);
+    rpc GetFrinedList(GetFriendListsRequest) returns(GetFriendListsResponse);
+}
+
+//注意message和service生成的文件中类的区别
