@@ -1,13 +1,14 @@
 #include "tinyRPCProvider.h"
 #include "tinyRPCApplication.h"
 #include "tinyRPCHeader.pb.h"
+#include "tinyLogger.h"
 
 //框架提供给外部使用，可以发布rpc方法的函数接口
 void TinyRPCProvider::NotifyService(google::protobuf::Service *service)
 {
     const google::protobuf::ServiceDescriptor *desp = service->GetDescriptor();
     std::string serviceName = desp->name();
-    std::cout << "service name:" << serviceName << std::endl;
+    LOG_INFO("service name : %s",serviceName.c_str());
     //存储服务信息
     ServiceInfo serviceInfo;
     for (int i = 0; i < desp->method_count(); i++)
@@ -16,7 +17,7 @@ void TinyRPCProvider::NotifyService(google::protobuf::Service *service)
         std::string methodName = methodDes->name();
         //存储方法信息
         serviceInfo.m_methodMap.insert({methodName, methodDes});
-        std::cout << "\tmethod name:" << methodName << std::endl;
+        LOG_INFO("method name : %s",methodName.c_str());
     }
     serviceInfo.m_service = service;
     m_serviceMap.insert({serviceName, serviceInfo});
