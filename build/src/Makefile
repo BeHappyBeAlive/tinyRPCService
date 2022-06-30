@@ -202,6 +202,30 @@ tinyRPCConfig.cc.s:
 	cd /home/codeTest/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/tinyRPC.dir/build.make src/CMakeFiles/tinyRPC.dir/tinyRPCConfig.cc.s
 .PHONY : tinyRPCConfig.cc.s
 
+tinyRPCController.o: tinyRPCController.cc.o
+.PHONY : tinyRPCController.o
+
+# target to build an object file
+tinyRPCController.cc.o:
+	cd /home/codeTest/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/tinyRPC.dir/build.make src/CMakeFiles/tinyRPC.dir/tinyRPCController.cc.o
+.PHONY : tinyRPCController.cc.o
+
+tinyRPCController.i: tinyRPCController.cc.i
+.PHONY : tinyRPCController.i
+
+# target to preprocess a source file
+tinyRPCController.cc.i:
+	cd /home/codeTest/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/tinyRPC.dir/build.make src/CMakeFiles/tinyRPC.dir/tinyRPCController.cc.i
+.PHONY : tinyRPCController.cc.i
+
+tinyRPCController.s: tinyRPCController.cc.s
+.PHONY : tinyRPCController.s
+
+# target to generate assembly for a file
+tinyRPCController.cc.s:
+	cd /home/codeTest/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/tinyRPC.dir/build.make src/CMakeFiles/tinyRPC.dir/tinyRPCController.cc.s
+.PHONY : tinyRPCController.cc.s
+
 tinyRPCHeader.pb.o: tinyRPCHeader.pb.cc.o
 .PHONY : tinyRPCHeader.pb.o
 
@@ -250,6 +274,30 @@ tinyRPCProvider.cc.s:
 	cd /home/codeTest/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/tinyRPC.dir/build.make src/CMakeFiles/tinyRPC.dir/tinyRPCProvider.cc.s
 .PHONY : tinyRPCProvider.cc.s
 
+tinylogger.o: tinylogger.cc.o
+.PHONY : tinylogger.o
+
+# target to build an object file
+tinylogger.cc.o:
+	cd /home/codeTest/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/tinyRPC.dir/build.make src/CMakeFiles/tinyRPC.dir/tinylogger.cc.o
+.PHONY : tinylogger.cc.o
+
+tinylogger.i: tinylogger.cc.i
+.PHONY : tinylogger.i
+
+# target to preprocess a source file
+tinylogger.cc.i:
+	cd /home/codeTest/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/tinyRPC.dir/build.make src/CMakeFiles/tinyRPC.dir/tinylogger.cc.i
+.PHONY : tinylogger.cc.i
+
+tinylogger.s: tinylogger.cc.s
+.PHONY : tinylogger.s
+
+# target to generate assembly for a file
+tinylogger.cc.s:
+	cd /home/codeTest/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/tinyRPC.dir/build.make src/CMakeFiles/tinyRPC.dir/tinylogger.cc.s
+.PHONY : tinylogger.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -268,12 +316,18 @@ help:
 	@echo "... tinyRPCConfig.o"
 	@echo "... tinyRPCConfig.i"
 	@echo "... tinyRPCConfig.s"
+	@echo "... tinyRPCController.o"
+	@echo "... tinyRPCController.i"
+	@echo "... tinyRPCController.s"
 	@echo "... tinyRPCHeader.pb.o"
 	@echo "... tinyRPCHeader.pb.i"
 	@echo "... tinyRPCHeader.pb.s"
 	@echo "... tinyRPCProvider.o"
 	@echo "... tinyRPCProvider.i"
 	@echo "... tinyRPCProvider.s"
+	@echo "... tinylogger.o"
+	@echo "... tinylogger.i"
+	@echo "... tinylogger.s"
 .PHONY : help
 
 

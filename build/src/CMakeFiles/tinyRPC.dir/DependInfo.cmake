@@ -11,8 +11,10 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/codeTest/src/tinyRPCApplication.cc" "src/CMakeFiles/tinyRPC.dir/tinyRPCApplication.cc.o" "gcc" "src/CMakeFiles/tinyRPC.dir/tinyRPCApplication.cc.o.d"
   "/home/codeTest/src/tinyRPCChannel.cc" "src/CMakeFiles/tinyRPC.dir/tinyRPCChannel.cc.o" "gcc" "src/CMakeFiles/tinyRPC.dir/tinyRPCChannel.cc.o.d"
   "/home/codeTest/src/tinyRPCConfig.cc" "src/CMakeFiles/tinyRPC.dir/tinyRPCConfig.cc.o" "gcc" "src/CMakeFiles/tinyRPC.dir/tinyRPCConfig.cc.o.d"
+  "/home/codeTest/src/tinyRPCController.cc" "src/CMakeFiles/tinyRPC.dir/tinyRPCController.cc.o" "gcc" "src/CMakeFiles/tinyRPC.dir/tinyRPCController.cc.o.d"
   "/home/codeTest/src/tinyRPCHeader.pb.cc" "src/CMakeFiles/tinyRPC.dir/tinyRPCHeader.pb.cc.o" "gcc" "src/CMakeFiles/tinyRPC.dir/tinyRPCHeader.pb.cc.o.d"
   "/home/codeTest/src/tinyRPCProvider.cc" "src/CMakeFiles/tinyRPC.dir/tinyRPCProvider.cc.o" "gcc" "src/CMakeFiles/tinyRPC.dir/tinyRPCProvider.cc.o.d"
+  "/home/codeTest/src/tinylogger.cc" "src/CMakeFiles/tinyRPC.dir/tinylogger.cc.o" "gcc" "src/CMakeFiles/tinyRPC.dir/tinylogger.cc.o.d"
   )
 
 # Targets to which this target links.

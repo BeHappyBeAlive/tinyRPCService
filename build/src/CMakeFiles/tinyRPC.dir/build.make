@@ -139,13 +139,43 @@ src/CMakeFiles/tinyRPC.dir/tinyRPCChannel.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tinyRPC.dir/tinyRPCChannel.cc.s"
 	cd /home/codeTest/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/codeTest/src/tinyRPCChannel.cc -o CMakeFiles/tinyRPC.dir/tinyRPCChannel.cc.s
 
+src/CMakeFiles/tinyRPC.dir/tinyRPCController.cc.o: src/CMakeFiles/tinyRPC.dir/flags.make
+src/CMakeFiles/tinyRPC.dir/tinyRPCController.cc.o: ../src/tinyRPCController.cc
+src/CMakeFiles/tinyRPC.dir/tinyRPCController.cc.o: src/CMakeFiles/tinyRPC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/codeTest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/tinyRPC.dir/tinyRPCController.cc.o"
+	cd /home/codeTest/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/tinyRPC.dir/tinyRPCController.cc.o -MF CMakeFiles/tinyRPC.dir/tinyRPCController.cc.o.d -o CMakeFiles/tinyRPC.dir/tinyRPCController.cc.o -c /home/codeTest/src/tinyRPCController.cc
+
+src/CMakeFiles/tinyRPC.dir/tinyRPCController.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tinyRPC.dir/tinyRPCController.cc.i"
+	cd /home/codeTest/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/codeTest/src/tinyRPCController.cc > CMakeFiles/tinyRPC.dir/tinyRPCController.cc.i
+
+src/CMakeFiles/tinyRPC.dir/tinyRPCController.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tinyRPC.dir/tinyRPCController.cc.s"
+	cd /home/codeTest/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/codeTest/src/tinyRPCController.cc -o CMakeFiles/tinyRPC.dir/tinyRPCController.cc.s
+
+src/CMakeFiles/tinyRPC.dir/tinylogger.cc.o: src/CMakeFiles/tinyRPC.dir/flags.make
+src/CMakeFiles/tinyRPC.dir/tinylogger.cc.o: ../src/tinylogger.cc
+src/CMakeFiles/tinyRPC.dir/tinylogger.cc.o: src/CMakeFiles/tinyRPC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/codeTest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/tinyRPC.dir/tinylogger.cc.o"
+	cd /home/codeTest/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/tinyRPC.dir/tinylogger.cc.o -MF CMakeFiles/tinyRPC.dir/tinylogger.cc.o.d -o CMakeFiles/tinyRPC.dir/tinylogger.cc.o -c /home/codeTest/src/tinylogger.cc
+
+src/CMakeFiles/tinyRPC.dir/tinylogger.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tinyRPC.dir/tinylogger.cc.i"
+	cd /home/codeTest/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/codeTest/src/tinylogger.cc > CMakeFiles/tinyRPC.dir/tinylogger.cc.i
+
+src/CMakeFiles/tinyRPC.dir/tinylogger.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tinyRPC.dir/tinylogger.cc.s"
+	cd /home/codeTest/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/codeTest/src/tinylogger.cc -o CMakeFiles/tinyRPC.dir/tinylogger.cc.s
+
 # Object files for target tinyRPC
 tinyRPC_OBJECTS = \
 "CMakeFiles/tinyRPC.dir/tinyRPCApplication.cc.o" \
 "CMakeFiles/tinyRPC.dir/tinyRPCProvider.cc.o" \
 "CMakeFiles/tinyRPC.dir/tinyRPCConfig.cc.o" \
 "CMakeFiles/tinyRPC.dir/tinyRPCHeader.pb.cc.o" \
-"CMakeFiles/tinyRPC.dir/tinyRPCChannel.cc.o"
+"CMakeFiles/tinyRPC.dir/tinyRPCChannel.cc.o" \
+"CMakeFiles/tinyRPC.dir/tinyRPCController.cc.o" \
+"CMakeFiles/tinyRPC.dir/tinylogger.cc.o"
 
 # External object files for target tinyRPC
 tinyRPC_EXTERNAL_OBJECTS =
@@ -155,9 +185,11 @@ tinyRPC_EXTERNAL_OBJECTS =
 ../lib/libtinyRPC.a: src/CMakeFiles/tinyRPC.dir/tinyRPCConfig.cc.o
 ../lib/libtinyRPC.a: src/CMakeFiles/tinyRPC.dir/tinyRPCHeader.pb.cc.o
 ../lib/libtinyRPC.a: src/CMakeFiles/tinyRPC.dir/tinyRPCChannel.cc.o
+../lib/libtinyRPC.a: src/CMakeFiles/tinyRPC.dir/tinyRPCController.cc.o
+../lib/libtinyRPC.a: src/CMakeFiles/tinyRPC.dir/tinylogger.cc.o
 ../lib/libtinyRPC.a: src/CMakeFiles/tinyRPC.dir/build.make
 ../lib/libtinyRPC.a: src/CMakeFiles/tinyRPC.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/codeTest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library ../../lib/libtinyRPC.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/codeTest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library ../../lib/libtinyRPC.a"
 	cd /home/codeTest/build/src && $(CMAKE_COMMAND) -P CMakeFiles/tinyRPC.dir/cmake_clean_target.cmake
 	cd /home/codeTest/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tinyRPC.dir/link.txt --verbose=$(VERBOSE)
 

@@ -1,2 +1,2 @@
-/usr/bin/ar qc ../../lib/libtinyRPC.a CMakeFiles/tinyRPC.dir/tinyRPCApplication.cc.o CMakeFiles/tinyRPC.dir/tinyRPCProvider.cc.o CMakeFiles/tinyRPC.dir/tinyRPCConfig.cc.o CMakeFiles/tinyRPC.dir/tinyRPCHeader.pb.cc.o CMakeFiles/tinyRPC.dir/tinyRPCChannel.cc.o
+/usr/bin/ar qc ../../lib/libtinyRPC.a CMakeFiles/tinyRPC.dir/tinyRPCApplication.cc.o CMakeFiles/tinyRPC.dir/tinyRPCProvider.cc.o CMakeFiles/tinyRPC.dir/tinyRPCConfig.cc.o CMakeFiles/tinyRPC.dir/tinyRPCHeader.pb.cc.o CMakeFiles/tinyRPC.dir/tinyRPCChannel.cc.o CMakeFiles/tinyRPC.dir/tinyRPCController.cc.o CMakeFiles/tinyRPC.dir/tinylogger.cc.o
 /usr/bin/ranlib ../../lib/libtinyRPC.a

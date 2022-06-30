@@ -783,8 +783,23 @@ example/callee/CMakeFiles/ServiceProvider.dir/userservice.cc.o: ../example/calle
   /usr/include/muduo/net/EventLoop.h \
   /usr/include/muduo/base/Mutex.h \
   /usr/include/muduo/base/CurrentThread.h \
-  /usr/include/muduo/net/TimerId.h
+  /usr/include/muduo/net/TimerId.h \
+  ../src/include/tinyLogger.h \
+  ../src/include/lockTinyLoggerQueue.h \
+  /usr/include/c++/11/queue \
+  /usr/include/c++/11/deque \
+  /usr/include/c++/11/bits/stl_deque.h \
+  /usr/include/c++/11/bits/deque.tcc \
+  /usr/include/c++/11/bits/stl_queue.h \
+  /usr/include/c++/11/condition_variable \
+  /usr/include/c++/11/thread \
+  /usr/include/c++/11/bits/std_thread.h \
+  /usr/include/c++/11/bits/this_thread_sleep.h
 
+
+/usr/include/c++/11/bits/deque.tcc:
+
+../src/include/tinyLogger.h:
 
 /usr/include/muduo/base/CurrentThread.h:
 
@@ -896,6 +911,8 @@ example/callee/CMakeFiles/ServiceProvider.dir/userservice.cc.o: ../example/calle
 
 /usr/local/include/google/protobuf/inlined_string_field.h:
 
+/usr/include/c++/11/deque:
+
 /usr/include/boost/config/compiler/gcc.hpp:
 
 /usr/local/include/google/protobuf/generated_enum_reflection.h:
@@ -925,6 +942,10 @@ example/callee/CMakeFiles/ServiceProvider.dir/userservice.cc.o: ../example/calle
 /usr/include/c++/11/bits/parse_numbers.h:
 
 /usr/include/c++/11/ctime:
+
+/usr/include/c++/11/thread:
+
+/usr/include/c++/11/condition_variable:
 
 /usr/include/muduo/net/TcpServer.h:
 
@@ -981,6 +1002,8 @@ example/callee/CMakeFiles/ServiceProvider.dir/userservice.cc.o: ../example/calle
 /usr/include/c++/11/pstl/glue_memory_defs.h:
 
 /usr/include/c++/11/backward/auto_ptr.h:
+
+/usr/include/c++/11/queue:
 
 /usr/include/c++/11/bits/shared_ptr_atomic.h:
 
@@ -1104,6 +1127,8 @@ example/callee/CMakeFiles/ServiceProvider.dir/userservice.cc.o: ../example/calle
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
+/usr/include/c++/11/bits/stl_deque.h:
+
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
 /usr/local/include/google/protobuf/wire_format_lite.h:
@@ -1163,6 +1188,8 @@ example/callee/CMakeFiles/ServiceProvider.dir/userservice.cc.o: ../example/calle
 /usr/include/c++/11/bits/atomic_base.h:
 
 /usr/include/features.h:
+
+/usr/include/c++/11/bits/this_thread_sleep.h:
 
 /usr/include/c++/11/bits/locale_facets.tcc:
 
@@ -1336,17 +1363,23 @@ example/callee/CMakeFiles/ServiceProvider.dir/userservice.cc.o: ../example/calle
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
+../src/include/lockTinyLoggerQueue.h:
+
 /usr/include/c++/11/limits:
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
+/usr/include/c++/11/bits/stl_queue.h:
+
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
 /usr/include/ctype.h:
+
+/usr/include/c++/11/bits/std_thread.h:
 
 /usr/include/c++/11/bits/cpp_type_traits.h:
 

@@ -696,8 +696,11 @@ example/caller/CMakeFiles/ServiceConsumer.dir/calluserservice.cc.o: ../example/c
   /usr/local/include/google/protobuf/extension_set.h \
   /usr/include/c++/11/cassert \
   /usr/local/include/google/protobuf/service.h \
-  ../src/include/tinyRPCChannel.h
+  ../src/include/tinyRPCChannel.h \
+  ../src/include/tinyRPCController.h
 
+
+../src/include/tinyRPCController.h:
 
 ../src/include/tinyRPCConfig.h:
 

@@ -294,6 +294,7 @@ src/CMakeFiles/tinyRPC.dir/tinyRPCChannel.cc.o: \
  /usr/include/c++/11/cassert \
  /home/codeTest/src/include/tinyRPCApplication.h \
  /home/codeTest/src/include/tinyRPCConfig.h \
+ /home/codeTest/src/include/tinyRPCController.h \
  /usr/include/x86_64-linux-gnu/sys/socket.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
  /usr/include/x86_64-linux-gnu/bits/socket.h \
@@ -311,4 +312,5 @@ src/CMakeFiles/tinyRPC.dir/tinyRPCChannel.cc.o: \
  /usr/include/asm-generic/sockios.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
  /usr/include/netinet/in.h /usr/include/x86_64-linux-gnu/bits/in.h \
- /usr/include/arpa/inet.h
+ /usr/include/arpa/inet.h /usr/include/c++/11/sstream \
+ /usr/include/c++/11/bits/sstream.tcc

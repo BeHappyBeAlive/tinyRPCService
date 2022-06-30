@@ -7,10 +7,14 @@ file(REMOVE_RECURSE
   "CMakeFiles/tinyRPC.dir/tinyRPCChannel.cc.o.d"
   "CMakeFiles/tinyRPC.dir/tinyRPCConfig.cc.o"
   "CMakeFiles/tinyRPC.dir/tinyRPCConfig.cc.o.d"
+  "CMakeFiles/tinyRPC.dir/tinyRPCController.cc.o"
+  "CMakeFiles/tinyRPC.dir/tinyRPCController.cc.o.d"
   "CMakeFiles/tinyRPC.dir/tinyRPCHeader.pb.cc.o"
   "CMakeFiles/tinyRPC.dir/tinyRPCHeader.pb.cc.o.d"
   "CMakeFiles/tinyRPC.dir/tinyRPCProvider.cc.o"
   "CMakeFiles/tinyRPC.dir/tinyRPCProvider.cc.o.d"
+  "CMakeFiles/tinyRPC.dir/tinylogger.cc.o"
+  "CMakeFiles/tinyRPC.dir/tinylogger.cc.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

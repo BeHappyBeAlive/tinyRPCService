@@ -25,6 +25,16 @@
   "file": "/home/codeTest/src/tinyRPCChannel.cc"
 },
 {
+  "directory": "/home/codeTest/build/src",
+  "command": "/usr/bin/g++  -I/home/codeTest/src/include -I/home/codeTest/example  -o CMakeFiles/tinyRPC.dir/tinyRPCController.cc.o -c /home/codeTest/src/tinyRPCController.cc",
+  "file": "/home/codeTest/src/tinyRPCController.cc"
+},
+{
+  "directory": "/home/codeTest/build/src",
+  "command": "/usr/bin/g++  -I/home/codeTest/src/include -I/home/codeTest/example  -o CMakeFiles/tinyRPC.dir/tinylogger.cc.o -c /home/codeTest/src/tinylogger.cc",
+  "file": "/home/codeTest/src/tinylogger.cc"
+},
+{
   "directory": "/home/codeTest/build/example/callee",
   "command": "/usr/bin/g++  -I/home/codeTest/src/include -I/home/codeTest/example  -o CMakeFiles/ServiceProvider.dir/userservice.cc.o -c /home/codeTest/example/callee/userservice.cc",
   "file": "/home/codeTest/example/callee/userservice.cc"
