@@ -17,14 +17,13 @@ void TinyRPCLogger::putLogIntoQueue(std::string logStr)
 void TinyRPCLogger::setLogLevel(TinyLogLevel level)
 {
     m_logLevel = level;
-    std::cout << m_logLevel << std::endl;
 }
 
 TinyRPCLogger::TinyRPCLogger()
 {
     //启动写日志线程
     std::thread writeLoggerTask([&]()
-                                {
+    {
         for (;;)
         {
             //日志文件写在log/yyyy-MM-dd-log.txt中
@@ -44,7 +43,6 @@ TinyRPCLogger::TinyRPCLogger()
             sprintf(timeBuf,"%d:%d:%d => [%s]",nowtm->tm_hour,nowtm->tm_min,nowtm->tm_sec,
                 (m_logLevel == _LOG_INFO?"LOG_INFO":"LOG_ERR")
             );
-            std::cout<<timeBuf <<":"<<m_logLevel<<std::endl;
             LogStr.insert(0,timeBuf);
             LogStr.append("\n");
             fputs(LogStr.c_str(),pf);
