@@ -2,6 +2,7 @@
 #include "user.pb.h"
 #include "tinyRPCApplication.h"
 #include "tinyRPCProvider.h"
+#include "tinyLogger.h"
 
 /*
        服务发布方 即callee 提供服务供服务发起方caller进行调用 提供Login方法
@@ -46,6 +47,9 @@ public:
 
 int main(int argc, char **argv)
 {
+    //连续的输出会导致日志类型识别错误
+    LOG_INFO("first log message test!");
+    //LOG_ERR("%s:%s:%d", __FILE__, __FUNCTION__, __LINE__);
     // //调用框架的初始化操作
     TinyRPCApplication::Init(argc, argv);
     TinyRPCProvider provider;
