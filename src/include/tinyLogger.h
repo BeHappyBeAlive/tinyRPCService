@@ -13,14 +13,14 @@ class TinyRPCLogger
 {
 public:
     static TinyRPCLogger &getInstance();
-    //日志存入线程安全的日志字符串队列
-    void putLogIntoQueue(std::string logStr);
+    //日志存入线程安全的日志字符串队列 0 logInfo 1 logErr
+    void putLogIntoQueue(std::string logStr, int logType);
     //设置日志级别
-    void setLogLevel(TinyLogLevel level);
+    //void setLogLevel(TinyLogLevel level);
 
 private:
     //日志级别成员变量
-    TinyLogLevel m_logLevel;
+    //TinyLogLevel m_logLevel;
     TinyRPCLogger();
     TinyRPCLogger(const TinyRPCLogger &) = delete;
     TinyRPCLogger(TinyRPCLogger &&) = delete;
@@ -28,22 +28,20 @@ private:
     LockTinyLoggerQueue<std::string> m_lockLogQueue;
 };
 
-#define LOG_INFO(inputLogStrFormat, ...)                                  \
-    do                                                                    \
-    {                                                                     \
-        TinyRPCLogger &logger = TinyRPCLogger::getInstance();             \
-        logger.setLogLevel(_LOG_INFO);                                    \
-        char logFormatStrBuf[1024] = {0};                                 \
+#define LOG_INFO(inputLogStrFormat, ...)                                   \
+    do                                                                     \
+    {                                                                      \
+        TinyRPCLogger &logger = TinyRPCLogger::getInstance();              \
+        char logFormatStrBuf[1024] = {0};                                  \
         snprintf(logFormatStrBuf, 1024, inputLogStrFormat, ##__VA_ARGS__); \
-        logger.putLogIntoQueue(logFormatStrBuf);                          \
-    } while (0);\
+        logger.putLogIntoQueue(logFormatStrBuf, _LOG_INFO);                \
+    } while (0);
 
-#define LOG_ERR(inputLogStrFormat, ...)                                  \
-    do                                                                    \
-    {                                                                     \
-        TinyRPCLogger &logger = TinyRPCLogger::getInstance();             \
-        logger.setLogLevel(_LOG_ERR);                                     \
-        char logFormatStrBuf[1024] = {0};                                 \
+#define LOG_ERR(inputLogStrFormat, ...)                                    \
+    do                                                                     \
+    {                                                                      \
+        TinyRPCLogger &logger = TinyRPCLogger::getInstance();              \
+        char logFormatStrBuf[1024] = {0};                                  \
         snprintf(logFormatStrBuf, 1024, inputLogStrFormat, ##__VA_ARGS__); \
-        logger.putLogIntoQueue(logFormatStrBuf);                          \
+        logger.putLogIntoQueue(logFormatStrBuf, _LOG_ERR);                 \
     } while (0);\

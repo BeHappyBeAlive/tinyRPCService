@@ -1,6 +1,7 @@
 #include "tinyLogger.h"
 #include <time.h>
 #include <iostream>
+#include <utility>
 
 TinyRPCLogger &TinyRPCLogger::getInstance()
 {
@@ -8,16 +9,16 @@ TinyRPCLogger &TinyRPCLogger::getInstance()
     return logger;
 }
 //日志存入线程安全的日志字符串队列
-void TinyRPCLogger::putLogIntoQueue(std::string logStr)
+void TinyRPCLogger::putLogIntoQueue(std::string logStr, int logType)
 {
     //将日志信息写入到缓存队列当中
-    m_lockLogQueue.Push(logStr);
+    m_lockLogQueue.Push(logStr, logType);
 }
 //设置日志级别
-void TinyRPCLogger::setLogLevel(TinyLogLevel level)
-{
-    m_logLevel = level;
-}
+// void TinyRPCLogger::setLogLevel(TinyLogLevel level)
+// {
+//     //m_logLevel = level;
+// }
 
 TinyRPCLogger::TinyRPCLogger()
 {
@@ -37,11 +38,12 @@ TinyRPCLogger::TinyRPCLogger()
                 std::cout<<"logger open file : "<<fileNameBuf<<" failed!"<<std::endl;
                 exit(EXIT_FAILURE);
             }
-            std::string LogStr=m_lockLogQueue.POP();
-
+            std::pair<std::string,int> pair = m_lockLogQueue.POP();
+            std::string LogStr = pair.first;
+            int curLogType = pair.second;
             char timeBuf[128]={0};
             sprintf(timeBuf,"%d:%d:%d => [%s]",nowtm->tm_hour,nowtm->tm_min,nowtm->tm_sec,
-                (m_logLevel == _LOG_INFO?"LOG_INFO":"LOG_ERR")
+                /*(m_logLevel == _LOG_INFO?"LOG_INFO":"LOG_ERR"*/(curLogType == 0?"LOG_INFO":"LOG_ERR")
             );
             LogStr.insert(0,timeBuf);
             LogStr.append("\n");

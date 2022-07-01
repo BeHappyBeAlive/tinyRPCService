@@ -4,21 +4,23 @@
 #include <condition_variable>
 #include <memory>
 #include <thread>
+#include <utility>
 
 template <typename queueType>
 class LockTinyLoggerQueue
 {
 public:
     //入队
-    void Push(const queueType &str)
+    void Push(const queueType &str, int curLevel)
     {
         std::lock_guard<std::mutex> lock(m_mutex);
         m_LogQueue.push(str);
+        m_logTypeQueue.push(curLevel);
         //有资源了通知写线程工作 注意此处如果写线程不唯一则notifyall
         m_conVariable.notify_one();
     }
     //出队返回队头元素
-    queueType POP()
+    std::pair<queueType, int> POP()
     {
         std::unique_lock<std::mutex> lock(m_mutex);
         while (m_LogQueue.empty())
@@ -28,8 +30,10 @@ public:
         }
         //其中有数据，且拿到锁资源 开始往出拿数据
         queueType str = m_LogQueue.front();
+        int curLogLevel = m_logTypeQueue.front();
         m_LogQueue.pop();
-        return str;
+        m_logTypeQueue.pop();
+        return std::make_pair(str, curLogLevel);
     }
 
 private:
@@ -39,4 +43,6 @@ private:
     std::mutex m_mutex;
     //线程间通信变量
     std::condition_variable m_conVariable;
+    //日志类型的下标
+    std::queue<int> m_logTypeQueue;
 };
