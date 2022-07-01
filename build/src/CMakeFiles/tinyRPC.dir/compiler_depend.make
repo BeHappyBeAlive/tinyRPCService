@@ -1846,7 +1846,18 @@ src/CMakeFiles/tinyRPC.dir/tinyRPCProvider.cc.o: ../src/tinyRPCProvider.cc \
   /usr/local/include/google/protobuf/generated_enum_reflection.h \
   /usr/local/include/google/protobuf/message.h \
   /usr/local/include/google/protobuf/extension_set.h \
-  /usr/include/c++/11/cassert
+  /usr/include/c++/11/cassert \
+  ../src/include/tinyLogger.h \
+  ../src/include/lockTinyLoggerQueue.h \
+  /usr/include/c++/11/queue \
+  /usr/include/c++/11/deque \
+  /usr/include/c++/11/bits/stl_deque.h \
+  /usr/include/c++/11/bits/deque.tcc \
+  /usr/include/c++/11/bits/stl_queue.h \
+  /usr/include/c++/11/condition_variable \
+  /usr/include/c++/11/thread \
+  /usr/include/c++/11/bits/std_thread.h \
+  /usr/include/c++/11/bits/this_thread_sleep.h
 
 src/CMakeFiles/tinyRPC.dir/tinylogger.cc.o: ../src/tinylogger.cc \
   /usr/include/stdc-predef.h \
